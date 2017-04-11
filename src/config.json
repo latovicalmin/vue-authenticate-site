@@ -1,0 +1,28 @@
+{
+  "auth": {
+    "google": {
+      "clientId": "400156086606-a4l1lskv7skla8970qqad06muvpgnitp.apps.googleusercontent.com",
+      "clientSecret": "n77iCiAdYTqkSGLnbizJohY0"
+    },
+    "facebook": {
+      "clientId": "541427766019185",
+      "clientSecret": "aaffdb1f48b1dfc7b2eaa31d7040b5bc"
+    },
+    "github": {
+      "clientId": "91b3c6a5b8411640e1b3",
+      "clientSecret": "b1bd0a7e6681942e0f1d00ca22a2d54e642c00eb"
+    },
+    "twitter": {
+      "clientId": "rRPrLMVT6tSpW7nifFnBNMD0V",
+      "clientSecret": "Gmihxq8U2D1Xr5O2rHLbHNsKMTjjMkFTrqlZ8wLsN0JHHFGr09"
+    },
+    "instagram": {
+      "clientId": "8d99c731ef354258aa62249aa192099b",
+      "clientSecret": "4eb842d7c8cd4f8dad86eafa451fb663"
+    },
+    "bitbucket": {
+      "clientId": "DekpxUnW4xKedhPVUV",
+      "clientSecret": "yfZB6RsxESRVBSK6SKWrBE9GBQKN9WWg"
+    }
+  }
+}
