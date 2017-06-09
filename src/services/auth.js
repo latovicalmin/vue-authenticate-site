@@ -1,12 +1,16 @@
 import Vue from 'vue'
-import VueResource from 'vue-resource'
+import VueAxios from 'vue-axios'
 import { VueAuthenticate } from 'vue-authenticate'
 import config from '../config.json'
+import axios from 'axios'
 
-Vue.use(VueResource)
+Vue.use(VueAxios, axios)
 
-const vueAuthInstance = new VueAuthenticate(Vue.http, {
+const vueAuthInstance = new VueAuthenticate(Vue.prototype.$http, {
   baseUrl: 'http://localhost:3000',
+  tokenName: 'access_token',
+  requestDataKey: 'data',
+  responseDataKey: 'data',
 
   providers: {
     github: {
@@ -25,6 +29,27 @@ const vueAuthInstance = new VueAuthenticate(Vue.http, {
       clientId: config.auth.twitter.clientId,
       redirectUri: 'http://localhost:8080/auth/callback'
     }
+  },
+
+  bindRequestInterceptor: function () {
+    this.$http.interceptors.request.use((config) => {
+      if (this.isAuthenticated()) {
+        config.headers['Authorization'] = [
+          this.options.tokenType, this.getToken()
+        ].join(' ')
+      } else {
+        delete config.headers['Authorization']
+      }
+      return config
+    })
+  },
+
+  bindResponseInterceptor: function () {
+    this.$http.interceptors.response.use((response) => {
+      console.log(response)
+      this.setToken(response)
+      return response
+    })
   }
 })
 
