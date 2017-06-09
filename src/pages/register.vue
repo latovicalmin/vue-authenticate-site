@@ -79,12 +79,6 @@
 
 <style lang="scss">
   .register-page {
-
-    .form--register {
-      margin: 0 auto;
-      max-width: 400px;
-    }
-
     .social-buttons {
       margin: 3rem 0;
       text-align: center;

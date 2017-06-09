@@ -72,12 +72,6 @@
 
 <style lang="scss">
   .login-page {
-
-    .form--login {
-      margin: 0 auto;
-      max-width: 400px;
-    }
-
     .social-buttons {
       margin: 3rem 0;
       text-align: center;
